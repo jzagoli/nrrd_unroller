@@ -17,7 +17,7 @@ def nrrd_to_png(nrrd_path: Path, imgs_out_path: Path):
         # image normalization
         img = (img / np.max(img)) * 255
         img = Image.fromarray(img.astype(np.uint8))
-        img.save(Path.joinpath(imgs_out_path, name), optimize=True)
+        img.save(imgs_out_path / name, optimize=True)
 
 
 # ============================== FOR TESTING PURPOSES ONLY =====================================#

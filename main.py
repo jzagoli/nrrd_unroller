@@ -25,8 +25,8 @@ if __name__ == '__main__':
                 raise e
             # in this new folder we will unroll the prostate and segmentation nrrds
             for file in [f for f in files if f.startswith("US") or f.startswith("Prostate")]:
-                nrrd = Path.joinpath(Path(path), Path(file))
-                unroll_nrrd(nrrd, dst_folder, is_mask=(False if file.startswith("US") else True))
+                nrrd = Path(path) / file
+                unroll_nrrd(nrrd, dst_folder)
                 count += 1
                 print("\t{} was converted".format(file))
                 
